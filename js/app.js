@@ -61,5 +61,3 @@ const linkList = document.querySelectorAll('li');
 for (i = 0; i < linkList.length; i++) {
     linkList[i].addEventListener('click', clickedOn);
 }
-
-/* Style active class */
