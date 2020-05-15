@@ -8,7 +8,7 @@
 
 ## Instructions
 
-To access my landing page, clone or download the files in the repository, P2-Landing-Page. Then, drag the index.html file into your browser. Click on the different sections in the navigation bar at the top of the page, to see my work in action.
+To access my landing page, clone or download the files in the repository, P2-Landing-Page. Then, drag the index.html file into your browser. Click on the different sections in the navigation bar at the top of the page to see my work in action.
 
 ## Starting-state
 
