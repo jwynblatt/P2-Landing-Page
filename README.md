@@ -12,7 +12,7 @@ To access my landing page, clone or download the files in the repository, P2-Lan
 
 ## Starting-state
 
-![](videos/before.gif)
+![](videos/Before.gif)
 
 This starter project began with some HTML and CSS styling to display a static version of the Landing Page project which was provided by Udacity. 
 
@@ -27,4 +27,4 @@ Specifically I:
 4. marked the section selected as active and used JavaScript to change the CSS, hightlighting the section that was selected in the navigation bar.
 5. scrolled to a new section when that new section name is click in the navigation bar, unhighlighting the old active section and highlighting the new active section.
 
-![](videos/after.gif)
+![](videos/After.gif)
