@@ -20,7 +20,7 @@ This starter project began with some HTML and CSS styling to display a static ve
 
 I added a JavaScript file to modify the HTML and CSS.
 
-Specifically I:
+Specifically I...
 1. linked a JavaScript file to the index.html
 2. added JavaScript to dynamically add a navigation bar at the page top. The JavaScript grabbed the section names and put them in the navigation bar
 3. used listeners on each section name in the navigation bar. When a section name is clicked on, the window scrolls to that section.
