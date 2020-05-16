@@ -8,7 +8,6 @@ function getNavTitles() {
 function getSectionAnchors() {
     const sectionParts = [...document.querySelectorAll('section')]
     const sectionAnchor = sectionParts.map(node => node.id)
-    console.log(sectionAnchor)
     return (sectionAnchor)
 }
 
@@ -22,7 +21,6 @@ function getSectionIDs() {
         indivID = '#' + sectAnchor
         allSectIDS.push(indivID)
     }
-    console.log(allSectIDS)
     return (allSectIDS)
 }
 
