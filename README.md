@@ -25,6 +25,6 @@ Specifically I...
 2. added JavaScript to dynamically add a navigation bar to the page top. The JavaScript grabbed the section names and put them in the navigation bar.
 3. used listeners on each section name in the navigation bar. When a section name is clicked on, the window scrolls to that section.
 4. determined which section is closest to the top of the window, marked that section as active and used JavaScript to change the CSS, highlighting the active section. 
-5. dynamically change the highlighted "active" section as the user scrolls or if the JavaScript initiates the scroll when the user clicks on a section name in the navigation bar.
+5. dynamically changed the highlighted "active" section as the user scrolls or if the JavaScript initiates the scroll when the user clicks on a section name in the navigation bar.
 
 ![](videos/After.gif)
