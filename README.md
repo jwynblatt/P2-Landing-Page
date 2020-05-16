@@ -21,10 +21,10 @@ This starter project began with some HTML and CSS styling to display a static ve
 I added a JavaScript file to modify the HTML and CSS.
 
 Specifically I...
-1. linked a JavaScript file to the index.html
-2. added JavaScript to dynamically add a navigation bar at the page top. The JavaScript grabbed the section names and put them in the navigation bar
+1. linked a JavaScript file to the index.html.
+2. added JavaScript to dynamically add a navigation bar to the page top. The JavaScript grabbed the section names and put them in the navigation bar.
 3. used listeners on each section name in the navigation bar. When a section name is clicked on, the window scrolls to that section.
-4. marked the section selected as active and used JavaScript to change the CSS, hightlighting the section that was selected in the navigation bar.
-5. scrolled to a new section when that new section name is click in the navigation bar, unhighlighting the old active section and highlighting the new active section.
+4. determined which section is closest to the top of the window, marked that section as active and used JavaScript to change the CSS, highlighting the active section. 
+5. dynamically change the highlighted "active" section as the user scrolls or if the JavaScript initiates the scroll when the user clicks on a section name in the navigation bar.
 
 ![](videos/After.gif)

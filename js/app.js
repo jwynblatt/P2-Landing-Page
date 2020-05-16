@@ -8,10 +8,75 @@ function getNavTitles() {
 function getSectionAnchors() {
     const sectionParts = [...document.querySelectorAll('section')]
     const sectionAnchor = sectionParts.map(node => node.id)
+    console.log(sectionAnchor)
     return (sectionAnchor)
 }
 
-/* Function determines section then scrolls to it and highlights it */
+/* Function creates and array of section ids */
+function getSectionIDs() {
+    let sectAnchors = sectionAnchors
+
+    let indivID = ''
+    let allSectIDS = []
+    for (sectAnchor of sectAnchors) {
+        indivID = '#' + sectAnchor
+        allSectIDS.push(indivID)
+    }
+    console.log(allSectIDS)
+    return (allSectIDS)
+}
+
+/* Function remove active class from old active section */
+function removeOldActive() {
+    const oldActive = document.querySelector('.your-active-class')
+    oldActive.removeAttribute('style', 'background-color: rgb(0, 0, 0); opacity: 75%')
+    oldActive.classList.remove('your-active-class')
+}
+
+/* Function adds active class to new active section */
+function addNewActive(sectID) {
+    const currentActive = document.querySelector(sectID)
+    currentActive.classList.add('your-active-class')
+    document.querySelector('.your-active-class').setAttribute('style', 'background-color: rgb(0, 0, 0); opacity: 75%')
+}
+
+/* Function highlights the section which is closest to the top of the window */
+function hiLite(event) {
+
+    /* Gets the location of each section relative to the top of the window */
+    sectIDS = getSectionIDs()
+
+    let sectLocs = []
+    for (sectID of sectIDS) {
+        sectLocs.push(document.querySelector(sectID).getBoundingClientRect().top)
+    }
+
+    /* Changes the relative location to absolute number for comparison */
+    let absNum = null
+    let sectLocAbs = []
+    for (sectLoc of sectLocs) {
+        absNum = Math.abs(sectLoc)
+        sectLocAbs.push(absNum)
+    }
+
+    /* The section with the smallest relative location number after the */
+    /* absolute value has been taken is the section closest to top -    */
+    /* Set it as the active section.                                    */
+    let activeSectInd = 0
+    let activeSect = sectIDS[activeSectInd]
+    for (i = 0; i < (sectIDS.length - 1); i++) {
+        if (sectLocAbs[i] >= sectLocAbs[i + 1]) {
+            activeSect = sectIDS[i + 1]
+            activeSectInd = (i + 1)
+        }
+    }
+
+    removeOldActive()
+
+    addNewActive(activeSect)
+}
+
+/* Function determines section then scrolls to it */
 function clickedOn(event) {
     /* Set the object to be of type MouseEvent */
     // eslint-disable-next-line no-undef
@@ -27,17 +92,6 @@ function clickedOn(event) {
             document.querySelector(sectID).scrollIntoView({
                 behavior: 'smooth'
             })
-
-            /* Remove active class from old active section */
-            const oldActive = document.querySelector('.your-active-class')
-            oldActive.removeAttribute('style', 'background-color: rgb(0, 0, 0); opacity: 75%')
-            oldActive.classList.remove('your-active-class')
-
-            /* Add active class to new active section */
-            const currentActive = document.querySelector(sectID)
-            currentActive.classList.add('your-active-class')
-            document.querySelector('.your-active-class').setAttribute('style', 'background-color: rgb(0, 0, 0); opacity: 75%')
-
             break
         }
     }
@@ -63,3 +117,6 @@ i = 0
 for (i = 0; i < linkList.length; i++) {
     linkList[i].addEventListener('click', clickedOn)
 }
+
+/* Identifies scrolling then calls function that highlights the section at the top of window */
+document.addEventListener('scroll', hiLite)
